@@ -1,0 +1,59 @@
+body {
+	direction: rtl;
+	background-image: url("../Pics/workbg.png");
+	background-size: 100%;
+	font-family: verdana;
+	background-attachment: fixed;
+}
+h1{
+	color: #141414;
+}
+#Headtitle
+{
+	direction: rtl;
+	color:black;
+	font-size:20px;
+}
+#sizee 
+{
+	width:300px;
+	height:500px;
+}
+
+#bordercolor
+{
+	direction: rtl;
+	border:2px solid;
+	border-radius:5px;
+	color: black;
+}
+#iframe
+{
+	direction: rtl;
+	width:700px;
+	height:500px;
+}
+#RegTable
+{
+    border: 1px solid black;
+    margin: 100px 150px 100px 80px;
+	direction: rtl;
+	background-color:grey;
+	font-size:20px;
+}
+
+#bg {
+    background-image: url("../Pics/workbg.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+fieldset 
+{
+  position: absolute;
+  bottom: 30px;
+  width: 98%;
+  border: 5px solid darkgrey;	
+}
+
+

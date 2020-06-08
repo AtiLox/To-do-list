@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<title>To do list</title>
+	</head>
+	<body>
+		<table style="width:100%" style="height:100%" >
+			<th id="Headtitle" align="center" width="100%"><h1>מחק משימות</h1></th>
+				<tr>
+					<td width="33%" align="center"><h2><a id="Normaltitle" href="../Web/AddM.html">הוסף משימה</a></h2></td>
+				</tr>
+				<tr>
+					<br>
+					<td id="Normaltitle" width="33%" align ="center"> 
+						<p>  
+							הכנס משימה:<input type="text" id="inpKey"></input>
+							<br> 
+							<br> 
+							<button onclick="myFunction(inpKey)">הוסף</button> 
+						</p>  
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p id ="IsOutput" align = "center">
+							<br>
+							<button onclick ="showM()"> הצג סטטוס משימות: </button>
+						</p>
+					</td>
+				</tr>
+				<fieldset>
+					<legend>סטטוס משימות  :</legend>
+					<div id="ShowCase"></div>	
+				</fieldset>
+				<tr>
+					<td>
+						<p id ="clear" align = "center">
+							<br>
+							<button onclick ="clearLs()"> מחק את כל המשימות</button>
+						</p>
+					</td>
+				</tr>
+		</table>
+	</body>
+</html>
+<script type="text/javascript">
+			let checkbox = 0;
+			localStorage;
+			function myFunction() 
+			{ 
+				if(document.getElementById("inpKey") != null)
+				{
+					let counter= 0;
+					counter ++;
+					let myObj =
+					{
+						counter ,
+						Mission : document.getElementById("inpKey").value
+					};
+					let myObj_serialized = JSON.stringify(myObj);
+					localStorage.setItem("myObj" , myObj_serialized);
+					let myObj_deserialized = JSON.parse(localStorage.getItem("myObj"));
+					console.log(myObj_serialized);
+					location.reload();
+				}
+				else{
+					document.getElementById("inpKey").innerHTML = "המשימה לא נוספה אנא בדוק שנית אם המשימה תיקנית";
+				}
+			}
+
+			function showM() 
+			{
+				checkbox++;
+				if(checkbox > 0)
+				{
+					for (let i = 0; i < localStorage.length; i++)
+					{
+						//להבין איך אני מציג את כל הלוקל סטורג
+						document.getElementById("ShowCase").innerText += (i + " - " + localStorage.getItem("myObj"));
+					}
+				}
+			}
+
+			function clearLs()
+			{
+				localStorage.clear();
+				document.getElementById("clear").innerHTML = "כל המשימות נמחקו";
+				console.log("The local storage is cleaned");	
+			}		
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
