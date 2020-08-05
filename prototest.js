@@ -10,7 +10,7 @@ let checkDb;
 let maxLength = 1;
 let removeCheck;
 let checkAdd;
-let Missions = "";
+let Mission = [];
 class NewMission 
 {
     constructor(Number, Mission)
@@ -18,24 +18,7 @@ class NewMission
         this.Number = number;
         this.Mission = mission;
     }
-    set addMission(mission){
-        this.Mission = document.getElementById("inpKey").value;
-    }
-    set addNumber(number){
-        this.Number = document.getElementById("inpNum").value;
-    }
-    get addMission()
-    {
-        return this.Mission;
-    }
-    get addNumber()
-    {
-        return this.Number;
-    }
- }
-    //let counter= 0;
-    //counter ++;
-    x++;
+}
 function myFunction() // קולטת משימה ומכניסה ללוקל סטורג
 { 
     checkAdd = document.getElementById("inpKey").value;
@@ -45,28 +28,20 @@ function myFunction() // קולטת משימה ומכניסה ללוקל סטו�
     }
     else 
     {
-        Object.create (NewMission[Number , Mission]);
+        Mission[x] = new NewMission (this.number = document.getElementById("inpNum").value , this.mission = document.getElementById("inpKey").value);
         if(ifRemoved > 0)
         {
             x=maxLength;
-            Missions =
-            {
-                number : document.getElementById("inpNum").value ,
-                mission : document.getElementById("inpKey").value
-            }
-            let myMiss_serialized = JSON.stringify(Missions);
-            NewMission[number , mission] = myMiss_serialized;
+            Mission[x] = new NewMission (this.number = document.getElementById("inpNum").value , this.mission = document.getElementById("inpKey").value);
+            let myMiss_serialized = JSON.stringify(Mission[x]);
+            Mission[x] = myMiss_serialized;
         }
         else
         {
-            Missions =
-            {
-                number : document.getElementById("inpNum").value ,
-                mission : document.getElementById("inpKey").value
-            }
-            let myMiss_serialized = JSON.stringify(Missions);
-            NewMission[number , mission] = myMiss_serialized;
-            console.log(NewMission[x] + "המשימה שנוספה היא");
+            Mission[x] = new NewMission (this.number = document.getElementById("inpNum").value , this.mission = document.getElementById("inpKey").value);
+            let myMiss_serialized = JSON.stringify(Mission[x]);
+            Mission[x] = myMiss_serialized;
+            console.log(Mission[x] + "המשימה שנוספה היא");
             document.getElementById("ShowCase").innerHTML = "המשימה נוספה בהצלחה";	
             x++;
             maxLength = x;
@@ -83,7 +58,7 @@ function showM() // מציגה את כל המשימות
         {
             for(let r = 0; r < x; r++)//בודק אם נלחץ יותר מפעם אחת הדאטא בייס ואז מחליף את המידע במקום לשכפל אותו
             {
-                checkDb += NewMission[r];
+                checkDb += Mission[r];
                 if(document.getElementById("searchKey").value == checkDb)
                 {
                     document.getElementById("ShowCase").innerText = (r + " - " + checkDb);
@@ -94,15 +69,15 @@ function showM() // מציגה את כל המשימות
         {
             if(ifRemoved > 0)
             {
-                TemporaryObj = NewMission[i];
-                document.getElementById("ShowCase").innerText = (NewMission[i] + " - " + TemporaryObj);
+                TemporaryObj = Mission[i];
+                document.getElementById("ShowCase").innerText = (Mission[i] + " - " + TemporaryObj);
                 ifRemoved = 0;
             }
             else
             {		
                 // להבין איך אני מציג את כל הלוקל סטורג בצורה נורמלית
-                TemporaryObj = NewMission[i];
-                document.getElementById("ShowCase").innerText += (NewMission[i] + " - " + TemporaryObj);
+                TemporaryObj = Mission[i];
+                document.getElementById("ShowCase").innerText += (Mission[i] + " - " + TemporaryObj);
                 ifRemoved = 0;
             }
         }
@@ -114,7 +89,7 @@ function SearchLsMission() // מחפשת משימה מסויימת
     if(showOneCheckbox > 0 && ifRemoved == 0) // אמור לבדוק אם לא נמחק משהו מהדאטא בייס 
     {
         Search = document.getElementById("searchKey").value;
-        TemporaryObj = NewMission[Search];
+        TemporaryObj = Mission[Search];
         if(TemporaryObj == null || TemporaryObj == "" || TemporaryObj == undefined || TemporaryObj == NaN)
             document.getElementById("ShowCase").innerText = ("לא קיימת במערכת משימה כזאת");		
         else
@@ -137,15 +112,14 @@ function SearchLsMission() // מחפשת משימה מסויימת
 function RemoveLsMission()//מוחקת משימה מסויימת
 {
     Remove = document.getElementById("removeKey").value;
-    removeCheck = NewMission[Remove];
-    if(removeCheck == null || removeCheck == "" || removeCheck == undefined || removeCheck == NaN)
+    if(Remove == null || Remove == "" || Remove == undefined || Remove == NaN || Mission[Remove] == NaN || Mission[Remove] == undefined || Mission[Remove] == "" || Mission[Remove] == null)
     {
         document.getElementById("ShowCase").innerText = ("לא קיימת במערכת משימה כזאת");		
     }	
     else
     {
         ifRemoved++;
-        Object.remove(NewMission[Remove]);
+        Mission[Remove] = null;
         document.getElementById("ShowCase").innerText = "משימה מס -" + Remove + "- נמחקה";
         console.log("The selected mission removed");
     }	
@@ -154,10 +128,11 @@ function RemoveLsMission()//מוחקת משימה מסויימת
 function clearLs()//מוחקת את כל המשימות
 {
     ifRemoved++;
-    Object.remove(NewMission);
-    document.getElementById("ShowCase").innerText = "כל המשימות נמחקו";
-    console.log("All of the missions removed");	
-    maxLength = 1;
+    for(let r = 0; r < Mission.length; r++)//עובר תא תא ומוחק את הערך
+    {
+        Mission[r] = undefined;
+    }
+    
 }	
 //הסברים לכל המשתנים באתר :
 //X - משנה המהווה את השם של המיקום בלוקל סטורג
