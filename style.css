@@ -1,0 +1,124 @@
+body {
+	direction: rtl;
+	background-color: gray;
+	font-family: verdana;
+	background-attachment: fixed;
+	color: white;
+}
+table{
+  background-image: linear-gradient(black, lightgray);
+  border-radius: 199px;
+  text-shadow: 1px 1px 2px black, 0 0 25px gray, 0 0 5px black;
+}
+h1{
+	color: white;
+}
+#Headtitle
+{
+	direction: rtl;
+	font-size:30px;
+  color: white;
+}
+#sizee 
+{
+	width:300px;
+	height:500px;
+}
+
+#bordercolor
+{
+	direction: rtl;
+	border:2px solid;
+	border-radius: 5px;
+	color: black;
+}
+#iframe
+{
+	direction: rtl;
+	width:700px;
+	height:500px;
+}
+#RegTable
+{
+    border: 1px solid black;
+    margin: 100px 150px 100px 80px;
+	direction: rtl;
+	background-color:grey;
+	font-size:20px;
+}
+
+#bg {
+    background-image: url("../Pics/workbg.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#midtablebg 
+{
+  position: absolute;
+  right: 800px;
+  bottom: 400px;
+  width: 15%;
+  height: 17%;
+  border: 2px solid darkgrey;	
+  border-radius: 25px;
+  background-image: radial-gradient(black, lightgray);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  column-fill: balance;
+}
+#lefttablebg 
+{
+  position: absolute;
+  right: 1500px;
+  bottom: 400px;
+  width: 15%;
+  height: 17%;
+  border: 2px solid darkgrey;	
+  border-radius: 25px;
+  background-image: radial-gradient(black, lightgray);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  column-fill: balance;
+}
+#righttablebg 
+{
+  position: absolute;
+  right: 100px;
+  bottom: 400px;
+  width: 15%;
+  height: 17%;
+  border: 2px solid darkgrey;	
+  border-radius: 25px;
+  background-image: radial-gradient(black, lightgray);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  column-fill: balance;
+}
+fieldset 
+{
+  position: absolute;
+  bottom: 30px;
+  width: 97%;
+  border: 5px solid darkgrey;	
+  border-radius: 30px;
+}
+button{
+  transition-duration: 0.4s;
+  background-color: black; color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  border-radius: 25px;
+}
+button:hover{
+	background-color : lightgray;
+}
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+
