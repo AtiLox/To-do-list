@@ -8,57 +8,64 @@
 		<table style="width:100%" style="height:10%" >
 			<th id="Headtitle" align="center" width="100%"><h1>אתר המשימות</h1></th>
 		</table>
-		<table style="width:100%" style="height:40%">
+		<table id="righttablebg">
 				<tr>
-					<td width="33%" align="center">
+					<td align="center">
 						<h1>הוסף משימה</h1>
-						<p>  
+						<p text-align ="center">  
 							
 							הכנס מילת מפתח:<input type="text" id="inpKeyword"></input>
 							<br> 
-							הכנס משימה:<input type="text" id="value"></input>
+							הכנס את המשימה:<input type="text" id="value"></input>
 							<br> 
 							<br> 
-							<button onclick="myFunction(value,inpKeyword)">הוסף</button> 
+							<button onclick="submitValue()">הוסף</button> 
+							</br>
+							</br>
 						</p>  
-						<br> 
-						<br> 
-						<br> 
-					</td>			
-					<td width="33%" align ="center"> 
+					</td>	
+				</tr>
+		</table>
+		<table id="midtablebg">	
+			<tr>	
+					<td align ="center">
 						<p>
 							<h1>חפש משימה</h1>
 						</p>
 						<p>  
-							הכנס מילת מפתח של משימה לחיפוש:<input type="text" id="searchKey"></input>
+							הכנס משימה לחיפוש:<input type="text" id="searchKey"></input>
 							<br> 
 							<br> 
-							<button onclick="myFunction(searchKey)">חפש</button> 
+							<button onclick="this.lookup(searchKey)">חפש</button> 
 						</p>  
-						<p id ="IsOutput" align = "center">
+						<p id ="IsOutput">
 							<br>
-							<button onclick ="myFunction()"> הצג סטטוס משימות: </button>
+							<button onclick ="showM()"> הצג סטטוס משימות: </button>
 						</p>
 					</td>
+				</tr>
+			</table>
+			<table id="lefttablebg">
+				<tr>
 					<br>
 					<td width="33%" align ="center"> 
 						<p>
 							<h1>מחק משימות</h1>
 						</p>
 						<p>  
-							הכנס מילת מפתח של משימה למחיקה:<input type="text" id="removeKey"></input>
+							הכנס משימה למחיקה:<input type="text" id="removeKey"></input>
 							<br> 
 							<br> 
-							<button onclick="myFunction(removeKey)">מחק</button> 
+							<button onclick="clearLs()">מחק</button> 
 						</p>  
 						<p id ="clear" align = "center">
 							<br>
-							<button onclick ="myFunction()"> מחק את כל המשימות</button>
+							<button onclick ="clearLs()"> מחק את כל המשימות</button>
 						</p>
 					</td>
 				</tr>
 		</table>
-		<table style="width:100%" style="height:50%">
+		<table style="width:100%" style="height:40%">
 				<fieldset>
 					<legend>סטטוס משימות  :</legend>
 					<div id="ShowCase"></div>	
